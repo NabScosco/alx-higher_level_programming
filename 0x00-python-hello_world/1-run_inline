@@ -1,2 +1,2 @@
 #!bin/bash
-python3 1-run_inline.py -c "print('Best School: 98')"
+python3 $PYCODE
