@@ -1,3 +1,5 @@
 #!/usr/bin/python3
 str = "Holberton School"
-print(f"{str*3} {str[0:9]}")
+mul_str = str * 3
+first_9char = str[0:10]
+print(f"{mul_str}{first_9char}")
