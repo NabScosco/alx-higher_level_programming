@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Check if PYFILE environment variable is set
+if [[ -z "${PYFILE}" ]]; then
+  echo "PYFILE environment variable is not set."
+  exit 1
+fi
+
+# Extract the filename and extension from PYFILE
+filename=$(basename -- "${PYFILE}")
+extension="${101-compile##*.}"
+filename="${101-compile%.*}"
+
+# Set the output filename
+output_filename="${101-compile}c.py"
+
+# Compile the Python script
+python -m py_compile "${PYFILE}"
+
+# Rename the compiled file to the desired output filename
+mv "__pycache__/${101-compile}.cpython-*.pyc" "${my_main}"
+
+# Cleanup the "__pycache__" directory
+rm -rf "__pycache__"
+
+echo "Compilation successful. Output filename: ${my_main}"
