@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print('The Zen of Python, by TimPeters')
+str ='The Zen of Python, by TimPeters'
+print(str)
